@@ -12,7 +12,8 @@ def print_welcome():
     pinfo = Get Product information.\n
     pbuy = Buy the Product. You'll be asked after sending for the amount.\n
     hlppls = Talk to my supervisor.\n
-    extendedhlppls = Get more help commands""")
+    extendedhlppls = Get more help commands""") 
+    
 
 
 
