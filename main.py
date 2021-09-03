@@ -64,5 +64,6 @@ if __name__ == '__main__':
     print_welcome()
     handle_input()
 
+#while loop, bis dismiss command kommt
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
