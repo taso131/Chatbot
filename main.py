@@ -1,6 +1,7 @@
 from datetime import date
 
 string = ""
+new_customer = False #Need to be replaced with a call from a database
 # Press Umschalt+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
@@ -18,11 +19,21 @@ def print_welcome():
 #rabatt system
 def print_invoice(capsule_units_to_purchase):
     print("|-------------------------------------------|")
-    print(f"| --- {get_total_sum()} € ---|")
+    print(f"| --- {get_total_sum(capsule_units_to_purchase)} € ---|")
     print("|-------------------------------------------|")
 
-def get_total_sum():
-        #discount
+def get_total_sum(capsule_units):
+    # the prices are for capsules with no filling and no aroma    
+    if new_customer: # need to be added.
+        if capsule_units < 3:
+            return(capsule_units*19.99-10) # 10 euro discount / 1pcs. = 50% / 2pcs. = 25%
+        else:
+            return(capsule_units*15.99) # 20% discount
+    else:
+        if capsule_units < 3:
+            return(capsule_units*19.99) # no discount
+        else:
+            return(capsule_units*17.99) # 10% discount                                          
 
 def handle_input():
     command = input()
