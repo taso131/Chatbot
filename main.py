@@ -1,8 +1,8 @@
-import calculations
+import calculations as calc
 
 command_dictionary = {
         'pinfo': 'New empty Capsules made of HPMC (Hydroxypropylmethylcellulose)',
-        'pbuy': calculations.order_product(),
+        'pbuy': "CREATE NEW PRODUCT BUY TEXT",
         'hlppls': 'ww1',
         'extendedhlppls': """
             icantwait = Wanna know when your Package might arrive?\n
@@ -13,7 +13,7 @@ command_dictionary = {
             howdoiusethisshhh = Need explanation on how to improve your usage with our HPMC-Capsules? Say no more!\n """,
         'icantwait': 'The moment you order, you\'ll get it by 2-4 Days in Europe. 7-10 Days in America and 10-14 Days worldwide',
         'idontwantitanymore': 'You may return your purchase for no reason in 14 days and you can apply for a return within 90 days if there is reason',
-        'wenexpirelul': calculations.get_expiry_date(),
+        'wenexpirelul': "CREATE NEW EXPIRE TEXT",
         'canipaywithbitcoins': 'You can pay with BTC, ETH, ADA, ONE and RBC',
         'isyourstuffevengood': 'Still not 100% if it fits for you? Look at the dozens of reviews we already have gotten since launch',
         'howdoiusethisshhh': 'For detailed instructions you can watch our video on youtube.com',
@@ -31,11 +31,17 @@ def print_welcome():
     
 def handle_input():
         try:
-                print(command_dictionary[input()])    
+            behavior = command_dictionary[input()]
+            print(behavior)
+            extended_functionality(behavior)
         except:
-                print("Im sorry, I didn't understand your input. Can you repeat, please?")
+            print("Im sorry, I didn't understand your input. Can you repeat, please?")
                 
-
+def extended_functionality(behavior):
+    if behavior == 'pbuy':
+        calc.order_product()
+    elif behavior == 'wenexpirelul':
+        calc.get_expiry_date()
 
 
 if __name__ == '__main__':
