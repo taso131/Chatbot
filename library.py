@@ -20,9 +20,10 @@ def order_product() -> list[str]:
     return customer_data
     
 async def try_to_reach_live_support():
-    while True:
+    for i in range(0,10):
         print("Hold on for a minute, we will try to connect you. Estimated time: 1 Min.")
         await time.sleep(3)
+    print("Connection timed out. Seems like there is no one left. Or maybe no one cares... Bad luck, my friend")
     
 def print_order_instructions() -> list[str]:
     print("How many units of Capsules do you want to buy? 1 Unit = 1.000 Capsules")
