@@ -1,5 +1,6 @@
 import library as lib
 import textprints as text
+import asyncio 
     
 def handle_input():
         try:
@@ -16,11 +17,14 @@ def extended_functionality(behavior):
         text.print_invoice(customer_data)
     elif behavior == 'wenexpirelul':
         lib.get_expiry_date()
+    elif behavior == 'hlppls':
+        asyncio.run(lib.try_to_reach_live_support())
 
 
 if __name__ == '__main__':
     text.print_welcome()
     handle_input()
+    input()
 
 #while loop, bis dismiss command kommt
 #text 4 github push

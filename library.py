@@ -1,4 +1,6 @@
 from datetime import date
+import time
+
 
 def get_expiry_date() -> str:
     expiry_date = date.today()
@@ -17,6 +19,10 @@ def order_product() -> list[str]:
     customer_data.append(get_total_sum(1)) #rabatt system
     return customer_data
     
+async def try_to_reach_live_support():
+    while True:
+        print("Hold on for a minute, we will try to connect you. Estimated time: 1 Min.")
+        await time.sleep(3)
     
 def print_order_instructions() -> list[str]:
     print("How many units of Capsules do you want to buy? 1 Unit = 1.000 Capsules")
