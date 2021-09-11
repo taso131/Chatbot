@@ -22,7 +22,7 @@ def order_product() -> list[str]:
 async def try_to_reach_live_support():
     for i in range(0,10):
         print("Hold on for a minute, we will try to connect you. Estimated time: 1 Min.")
-        await time.sleep(3)
+        time.sleep(3)
     print("Connection timed out. Seems like there is no one left. Or maybe no one cares... Bad luck, my friend")
     
 def print_order_instructions() -> list[str]:
