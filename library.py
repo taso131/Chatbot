@@ -30,7 +30,7 @@ def order_product() -> list[str]:
     customer_data = print_order_instructions()
     customer_data.append(get_total_sum(1))  # rabatt system
     return customer_data
-
+#falscher rechnungswert, morgen prüfen
 
 async def try_to_reach_live_support():
     for i in range(0, 10):
