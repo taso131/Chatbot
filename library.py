@@ -4,7 +4,7 @@ import time
 
 def get_expiry_date():
     current_date = datetime.now()
-    expiry_date_year = int(current_date.strftime('%Y')) + 1
+    expiry_date_year = int(current_date.strftime('%Y')) + 2
     expiry_date_month = current_date.strftime('%m')
     print(f"If you order this month, your product will have a best before date of {expiry_date_month} / {expiry_date_year}")
     
