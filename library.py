@@ -1,12 +1,13 @@
-from datetime import date
+import datetime
 import time
 
 
 def get_expiry_date():
-        current_date = date(date.year, date.month, date.day)
-        best_before_date = date(current_date.year + 2, current_date.month, current_date.day)
-        #date(startDate.year + 1, startDate.month
-        print(f"If you order this month, your product will have a best before date of {best_before_date}")
+    current_date = datetime.datetime.now()
+    #addiere 1 jahr auf current date
+    best_before_date = current_date + datetime.timedelta(years=1)#date(current_date.year + 2, current_date.month, current_date.day)
+    #date(startDate.year + 1, startDate.month
+    print(f"If you order this month, your product will have a best before date of {best_before_date}")
     
 def get_total_sum(amount_to_buy) -> int:
     return amount_to_buy

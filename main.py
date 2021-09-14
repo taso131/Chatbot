@@ -1,4 +1,3 @@
-from datetime import date
 import library as lib
 import textprints as text
 import asyncio 
@@ -8,7 +7,7 @@ def handle_input():
     while True:
         try:
             input_dictionary_key = input()
-            if input_dictionary_key == 'nothxbye':
+            if input_dictionary_key == 'kthxbye':
                 break
             
             dictionary_result = text.command_dictionary[input_dictionary_key]
