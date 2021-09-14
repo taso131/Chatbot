@@ -33,7 +33,7 @@ def get_total_sum(amount_to_buy) -> float:
 
 def order_product() -> list[str]:
     customer_data = print_order_instructions()
-    customer_data.append(get_total_sum(1))  # rabatt system
+    customer_data.append(get_total_sum(customer_data[0]))  # rabatt system
     return customer_data
 
 
