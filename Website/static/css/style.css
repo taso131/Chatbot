@@ -1,0 +1,60 @@
+.btn-chat {
+    border: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    width: 20%;
+}
+
+#chatbox {
+    display: none;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    z-index: 9;
+}
+
+.form-container {
+    max-width: 300px;
+    min-height: 200px;
+    padding: 10px;
+    background: white;
+}
+
+#chat-message-list {
+    height: 200px;
+}
+
+.btn-send,
+.btn-close {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border: none;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.btn-send {
+    background: green;
+}
+
+.btn-close {
+    background: red;
+}
+
+.btn-send,
+.btn-close,
+.btn-chat:hover {
+    opacity: 1;
+}
+
+h2 {
+    background: blue;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>HPMC - Hydroxypropylmethylcellulose Kapseln</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <a class="logo" href="main.html">
+            <img src="Logo/logo.png" alt="Logo">
+        </a>
+        <div class="menu">
+            <ul class="list">
+                <li class="nav-item">
+                    <a href="main.html">Home</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="banner">
+        <img src="Banner/Banner.png" alt="Banner">
+    </div>
+    <div class="body">
+        <div class="text1">
+            <p>&nbsp;</p>
+            <h1>HPMC</h1>
+            <p>
+                <br>
+                <strong>Überblick</strong>
+                <br>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+                ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </p>
+        </div>
+        <div class="chatbox" id="chatbox">
+            <h2>Message</h2>
+            <form class="form-container">
+                <div id="chat-message-list">
+                    <div class="message-row">
+                        <div class="message-text">
+
+                        </div>
+                    </div>
+                </div>
+                <input type="text" placeholder="Type a message" name="msg" required="" />
+                <button type="submit" class="btn btn-info btn-lg btn-send">Send</button>
+                <button type="button" class="btn btn-danger btn-lg btn-close" onclick="closeChat()">Close</button>
+            </form>
+        </div>
+        <button class="btn btn-info btn-chat" type="button" onclick="openChat()">Chat</button>
+    </div>
+
+</body>
+
+</html>
