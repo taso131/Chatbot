@@ -3,7 +3,7 @@ import asyncio
 import time
 import datetime
 import os
-import discountlogic
+import discountlogic as dclogic
 
 
 class BotLogic():
@@ -45,7 +45,7 @@ class BotLogic():
         elif self.steps_of_progress['pbuy'] == 3:
             self.customer_data.append(params)
             self.customer_data.append(
-                float(int(self.get_total_sum()*100)/100))
+                float(int(self.get_total_sum())))
             answer = text.print_invoice(self.customer_data)
             self.set_zero()
         self.customer_data.append(params)
@@ -79,7 +79,7 @@ async def try_to_reach_live_support():
 #customer_data = List[first_name, last_name, units_to_purchase, total amount]
 def order_product() -> list[str]:
     customer_data = print_order_instructions()
-    customer_data.append(discountlogic.get_total_sum(customer_data))  # rabatt system
+    customer_data.append(dclogic.get_total_sum(customer_data))  # rabatt system
     return customer_data
 
 def print_order_instructions() -> list[str]:

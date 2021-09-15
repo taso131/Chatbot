@@ -1,6 +1,5 @@
 import textprints as prints
 import functions as funcs
-import random
 import os
 
 #Try to print an invoice
