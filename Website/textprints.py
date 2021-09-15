@@ -10,14 +10,16 @@ command_dictionary = {
             canipaywithbitcoins = What payment methods do we accept? Also want to know wether you can pay in rates?\n
             isyourstuffevengood = Worrying that those capsules are made with bad quality? Or not as described? Just take a look at one of our reviews\n
             howdoiusethisshhh = Need explanation on how to improve your usage with our HPMC-Capsules? Say no more!\n """,
-        'icantwait': 'The moment your order comes into our system, you\'ll usually get it by 2-4 Days in Europe. 7-10 Days in America and 10-14 Days worldwide',
-        'idontwantitanymore': 'You may return your purchase for no reason in 14 days and you can apply for a return within 90 days if there is reason',
-        'wenexpirelul': "Our capsules are guaranteed to at least have a best before date two years in the future, the moment you order",# Hier muss ein Datetime geprinted werden, was currenttime + (year+1) ist
-        'canipaywithbitcoins': 'You can pay with BTC, ETH, ADA, ONE and RBC. But we also accept PayPal, Visa, Mastercard and EU-SEPA direct debit, including wire transfer',
-        'isyourstuffevengood': 'Still not 100% if it fits for you? Look at the dozens of reviews we already have gotten since launch',
-        'howdoiusethisshhh': 'For detailed instructions you can watch our video on https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        #'nothxbye' : 'I hope that my responses where useful for you. Thank your for contacting our support. Have a nice day!' #Muss gleichzeitig eine extended functionality sein und die while schleife beenden
-        }
+    'icantwait': 'The moment your order comes into our system, you\'ll usually get it by 2-4 Days in Europe. 7-10 Days in America and 10-14 Days worldwide',
+    'idontwantitanymore': 'You may return your purchase for no reason in 14 days and you can apply for a return within 90 days if there is reason',
+    # Hier muss ein Datetime geprinted werden, was currenttime + (year+1) ist
+    'wenexpirelul': "Our capsules are guaranteed to at least have a best before date two years in the future, the moment you order",
+    'canipaywithbitcoins': 'You can pay with BTC, ETH, ADA, ONE and RBC. But we also accept PayPal, Visa, Mastercard and EU-SEPA direct debit, including wire transfer',
+    'isyourstuffevengood': 'Still not 100% if it fits for you? Look at the dozens of reviews we already have gotten since launch',
+    'howdoiusethisshhh': 'For detailed instructions you can watch our video on https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    # 'nothxbye' : 'I hope that my responses where useful for you. Thank your for contacting our support. Have a nice day!' #Muss gleichzeitig eine extended functionality sein und die while schleife beenden
+}
+
 
 def print_welcome():
     return """Hello dear Customer. Welcome to our \"live\" Support.
@@ -28,16 +30,18 @@ def print_welcome():
     hlppls = Talk to my supervisor.\n
     extendedhlppls = Get more help commands"""
 
+
 def print_invoice(customer_data):
-    print( "|-------------------------------------------------------------|")
-    print(f"|------------------- Dear {customer_data[0], customer_data[1]} -------------------- |")
-    print(f"| ----- We are happy for your purchase of {customer_data[2]} * 1000 Caps ----- |")
-    print(f"| -------------------- {customer_data[3]} € ----------------------- |")
-    print( "|--------------------------------------------------------------|")
     funcs.write_order_into_database(customer_data)
+    return f"""|-------------------------------------------------------------|
+            |------------------- Dear {customer_data[1], customer_data[2]} -------------------- |
+            | ----- We are happy for your purchase of {customer_data[0]} * 1000 Caps ----- |
+            | -------------------- {customer_data[3]} € ----------------------- |
+            |--------------------------------------------------------------|"""
+
 
 def print_rating():
-    print("""
+    return """
 ░░░░░░░░░▄░░░░░░░░░░░░░░▄░░░░
 ░░░░░░░░▌▒█░░░░░░░░░░░▄▀▒▌░░░   Very guud
 ░░░░░░░░▌▒▒█░░░░░░░░▄▀▒▒▒▐░░░
@@ -70,4 +74,4 @@ def print_rating():
 ██████░▀▀█▄░░░█▄░░░░
 ░▀▀▀▀█▄▄▀░██████▄░░░░
 ░░░░░░░░░█████████░░░░
-""")
+"""
