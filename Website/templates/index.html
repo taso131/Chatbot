@@ -8,58 +8,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 </head>
 
-<body>
+<body class="body-layout-fluid">
     <header class="header">
-        <a class="logo" href="main.html">
-            <img src="Logo/logo.png" alt="Logo">
-        </a>
-        <div class="menu">
-            <ul class="list">
-                <li class="nav-item">
-                    <a href="main.html">Home</a>
-                </li>
-            </ul>
+        <div class="banner" style="background-image: url(static/Banner.jpg)">
+            <a class="logo" href="index.html">
+                <img src="{{ url_for('static', filename='Logo.png') }}" alt="Logo">
+            </a>
         </div>
     </header>
-    <div class="banner">
-        <img src="Banner/Banner.png" alt="Banner">
+    <div id="HPMCText">
+        <p>&nbsp;</p>
+        <h1>HPMC</h1>
+        <p>
+            <br>
+            <strong>Überblick</strong>
+            <br>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+            labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+            ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+            dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
     </div>
-    <div class="body">
-        <div class="text1">
-            <p>&nbsp;</p>
-            <h1>HPMC</h1>
-            <p>
-                <br>
-                <strong>Überblick</strong>
-                <br>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
-                ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-                clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-            </p>
-        </div>
-        <div class="chatbox" id="chatbox">
-            <h2>Message</h2>
-            <form class="form-container">
-                <div id="chat-message-list">
-                    <div class="message-row">
-                        <div class="message-text">
-
-                        </div>
-                    </div>
-                </div>
-                <input type="text" placeholder="Type a message" name="msg" required="" />
-                <button type="submit" class="btn btn-info btn-lg btn-send">Send</button>
-                <button type="button" class="btn btn-danger btn-lg btn-close" onclick="closeChat()">Close</button>
-            </form>
-        </div>
-        <button class="btn btn-info btn-chat" type="button" onclick="openChat()">Chat</button>
+    <div class="chatbox" id="chatbox">
+        <h2>Message</h2>
+        <form class="form-container">
+            <div id="chat-message-list"></div>
+            <input type="text" class="input" placeholder="Type a message" name="msg" required="" />
+            <button type="button" class="btn btn-info btn-lg btn-send" onclick="chatWithBot()">Send</button>
+            <button type="button" class="btn btn-danger btn-lg btn-close" onclick="closeChat()">Close</button>
+        </form>
     </div>
+    <button class="btn btn-info btn-chat" type="button" onclick="openChat()">Chat</button>
 
 </body>
 

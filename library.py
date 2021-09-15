@@ -28,10 +28,13 @@ def get_total_sum(amount_to_buy) -> float:
         else:
             return(amount_to_buy*17.99)  # 10% discount
 
-#customer_data = List[units_to_purchase, first_name, last_name]
+# customer_data = List[units_to_purchase, first_name, last_name] <- Diese kommentare sollten nicht im Code sein.
+# Wenn du so einen Kommentar verwenden willst, dann in der Methode und """ am Anfang und Ende
 
 
 def order_product() -> list[str]:
+    """return List[units_to_purchase, first_name, last_name, amount_to_buy]"""
+    # Ich glaube hier ist es besser ein tuple zurückzugeben, anstatt einer Liste
     customer_data = print_order_instructions()
     customer_data.append(get_total_sum(customer_data[0]))  # rabatt system
     return customer_data
