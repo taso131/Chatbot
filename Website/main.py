@@ -1,4 +1,4 @@
-import library as lib
+import functions as lib
 import textprints as text
 import asyncio 
 import time

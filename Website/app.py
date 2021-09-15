@@ -1,14 +1,12 @@
 import datetime
-import functions as func
-from functions import BotLogic
+import functions as funcs
+import textprints as text
 from os import name
 from flask import Flask
 from flask import render_template
 from flask import request
-import textprints as text
 
 app = Flask(__name__)
-bot = BotLogic()
 
 
 @app.route("/")
@@ -31,7 +29,7 @@ def need_answer():
     try:
         return text.command_dictionary[request.args.get('message')]
     except KeyError:
-        return bot.extended_functionality(request.args.get('message'))
+        return funcs.extended_functionality(request.args.get('message'))
 
 
 @app.route("/newQuestion", methods=['GET'])

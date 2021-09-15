@@ -1,12 +1,12 @@
 import textprints as prints
-import library as lib
+import functions as funcs
 import random
 import os
 
 #Try to print an invoice
 def test_print_invoice(firstName = "t1st", secondName = "t2st", testAmount = 3):
-    customer_data = [firstName, secondName, testAmount, lib.get_total_sum(2)]
-    prints.print_invoice(customer_data)#lib.get_total_sum(random.randint(0, 100))
+    customer_data = [firstName, secondName, testAmount, funcs.get_total_sum(2)]
+    prints.print_invoice(customer_data)
     write_order_into_database(customer_data)
 
     
