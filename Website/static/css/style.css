@@ -56,14 +56,14 @@ body {
 }
 
 .form-container {
-    max-width: 350px;
-    min-height: 350px;
+    max-width: 400px;
+    min-height: 400px;
     padding: 10px;
     background: white;
 }
 
 #chat-message-list {
-    height: 250px;
+    height: 300px;
     overflow-y: scroll;
 }
 
