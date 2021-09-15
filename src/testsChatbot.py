@@ -4,9 +4,10 @@ import random
 import os
 
 #Try to print an invoice
-def test_print_invoice(testAmount = 0, firstName = "t1st", secondName = "t2st"):
-    customer_data = [testAmount, firstName, secondName, lib.get_total_sum(2)]
+def test_print_invoice(firstName = "t1st", secondName = "t2st", testAmount = 3):
+    customer_data = [firstName, secondName, testAmount, lib.get_total_sum(2)]
     prints.print_invoice(customer_data)#lib.get_total_sum(random.randint(0, 100))
+    write_order_into_database(customer_data)
 
     
 def write_order_into_database(firstName, lastName, amount_ordererd):

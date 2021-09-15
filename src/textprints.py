@@ -30,10 +30,10 @@ def print_welcome():
     extendedhlppls = Get more help commands""") 
     
 def print_invoice(customer_data):
-    print( "|-----------------------------------------------|")
-    print(f"|-------------- Dear {customer_data[1], customer_data[2]} ---------------- |")
-    print(f"| --- We are happy for your purchase of {customer_data[0]} * 1000 Caps --- |")
-    print(f"| ---------------------- {customer_data[3]} € --------------------- |")
+    print( "|-------------------------------------------------------------|")
+    print(f"|-------------- Dear {customer_data[0], customer_data[1]} ---------------- |")
+    print(f"| --- We are happy for your purchase of {customer_data[2]} * 1000 Caps --- |")
+    print(f"| ---------------------- {customer_data[3]} € -------------------------- |")
     print( "|--------------------------------------------------------------------------|")
-    lib.write_order_into_database(customer_data[1],customer_data[2],customer_data[0],)
+    lib.write_order_into_database(customer_data)
     
