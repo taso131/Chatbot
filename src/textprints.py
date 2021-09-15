@@ -1,3 +1,5 @@
+import library as lib
+
 command_dictionary = {
     'pinfo': 'We offer empty Capsules made of HPMC (Hydroxypropylmethylcellulose), but also prefilled ones with a variety of aromas, too!',
     'hlppls': 'Hold on for a minute, we\'ll try to connect you to the next supervisor we can reach',
@@ -37,11 +39,10 @@ def print_welcome():
 
 
 def print_invoice(customer_data):
-    print("|-----------------------------------------------|")
-    print(
-        f"|-------------- Dear {customer_data[1], customer_data[2]} ---------------- |")
-    print(
-        f"| --- We are happy for your purchase of {customer_data[0]} * 1000 Caps --- |")
-    print(
-        f"| ---------------------- {customer_data[3]} € --------------------- |")
-    print("|--------------------------------------------------------------------------|")
+    print( "|-------------------------------------------------------------|")
+    print(f"|-------------- Dear {customer_data[0], customer_data[1]} ---------------- |")
+    print(f"| --- We are happy for your purchase of {customer_data[2]} * 1000 Caps --- |")
+    print(f"| ---------------------- {customer_data[3]} € -------------------------- |")
+    print( "|--------------------------------------------------------------------------|")
+    lib.write_order_into_database(customer_data)
+    

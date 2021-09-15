@@ -15,10 +15,10 @@ def handle_input():
             
             extended_functionality(input_dictionary_key)
             time.sleep(2)
-            print("Is there anything else I can help you with? If not, just type in 'kthxbye'")
+            print("\n", "Is there anything else I can help you with? If not, just type in 'kthxbye'")
             
         except KeyError: 
-            print("Im sorry, I didn't understand your input. Can you repeat, please?")
+            print("\n", "Im sorry, I didn't understand your input. Can you repeat, please?")
                 
 def extended_functionality(behavior):
     if behavior == 'pbuy':
@@ -28,10 +28,7 @@ def extended_functionality(behavior):
         lib.get_expiry_date()
     elif behavior == 'hlppls':
         asyncio.run(lib.try_to_reach_live_support())
-        
-    #elif für mindesthaltbarkeitsdatum getDate.year +1 // wenexpirelul
     #elif für ratenzahlung
-    #elif für wenexpirelul
     #zahlungsmethode für invoice? btc/ debit/ credit
 
 if __name__ == '__main__':
