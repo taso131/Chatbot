@@ -1,5 +1,6 @@
 from datetime import datetime
 import time
+import os
 
 new_customer = True  # would come from a database
 
@@ -9,7 +10,7 @@ def get_expiry_date():
     expiry_date_year = int(current_date.strftime('%Y')) + 2
     expiry_date_month = current_date.strftime('%m')
     print(f"If you order this month, your product will have a best before date of {expiry_date_month} / {expiry_date_year}")
-
+    
 
 def get_total_sum(amount_to_buy) -> float:
     # the prices are for capsules with no filling and no aroma
@@ -47,3 +48,7 @@ def print_order_instructions() -> list[str]:
     print("What's your Lastname?")
     last_name = input()
     return [units_to_purchase, first_name, last_name]
+
+def write_order_into_database(firstName, lastName, amount_ordererd):
+    with open((os.path.join(os.path.join(os.environ['USERPROFILE']))) + "\\database.txt\n", "a") as f:
+        f.writelines(firstName, ";", lastName, ";", amount_ordererd, "\n")

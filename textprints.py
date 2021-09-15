@@ -1,3 +1,5 @@
+import library as lib
+
 command_dictionary = {
         'pinfo': 'We offer empty Capsules made of HPMC (Hydroxypropylmethylcellulose), but also prefilled ones with a variety of aromas, too!',
         'pbuy': "We are happy, to welcome you as a customer. Please, follow the next steps to create your invoice:",
@@ -33,3 +35,5 @@ def print_invoice(customer_data):
     print(f"| --- We are happy for your purchase of {customer_data[0]} * 1000 Caps --- |")
     print(f"| ---------------------- {customer_data[3]} € --------------------- |")
     print( "|--------------------------------------------------------------------------|")
+    lib.write_order_into_database(customer_data[1],customer_data[2],customer_data[0],)
+    
