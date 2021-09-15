@@ -29,6 +29,7 @@ def print_order_instructions() -> list[str]:
     last_name = input()
     print("How many units of Capsules do you want to buy? 1 Unit = 1.000 Capsules")
     units_to_purchase = str(input())
+    #while not int, re-ask
     return [first_name, last_name, units_to_purchase]
 
 
