@@ -1,10 +1,9 @@
 import library as lib
 
 command_dictionary = {
-        'pinfo': 'We offer empty Capsules made of HPMC (Hydroxypropylmethylcellulose), but also prefilled ones with a variety of aromas, too!',
-        'pbuy': "We are happy, to welcome you as a customer. Please, follow the next steps to create your invoice:",
-        'hlppls': 'Hold on for a minute, we\'ll try to connect you to the next supervisor we can reach',
-        'extendedhlppls': """
+    'pinfo': 'We offer empty Capsules made of HPMC (Hydroxypropylmethylcellulose), but also prefilled ones with a variety of aromas, too!',
+    'hlppls': 'Hold on for a minute, we\'ll try to connect you to the next supervisor we can reach',
+    'extendedhlppls': """
             icantwait = Want to know when your Package might arrive?\n
             idontwantitanymore = Unhappy with our Service? :( Just tell us! We'll find a solution\n
             wenexpirelul = Best before date. You'll be asked for the month you'll want to order\n
@@ -21,14 +20,22 @@ command_dictionary = {
         }
 
 def print_welcome():
-    print("Hello dear Customer. Welcome to our \"live\" Support.")
-    print("""How may I help you today?\n
+    return """Hello dear Customer. Welcome to our \"live\" Support.
+    How may I help you today?\n
     Type in one of the following for easy and quick support:\n
     pinfo = Get Product information.\n
     pbuy = Buy the Product. You'll be asked after sending for the amount.\n
     hlppls = Talk to my supervisor.\n
-    extendedhlppls = Get more help commands""") 
-    
+    extendedhlppls = Get more help commands"""
+    # print("Hello dear Customer. Welcome to our \"live\" Support.")
+    # print("""How may I help you today?\n
+    # Type in one of the following for easy and quick support:\n
+    # pinfo = Get Product information.\n
+    # pbuy = Buy the Product. You'll be asked after sending for the amount.\n
+    # hlppls = Talk to my supervisor.\n
+    # extendedhlppls = Get more help commands""")
+
+
 def print_invoice(customer_data):
     print( "|-------------------------------------------------------------|")
     print(f"|------------------- Dear {customer_data[0], customer_data[1]} -------------------- |")
