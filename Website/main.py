@@ -1,4 +1,4 @@
-import library as lib
+import functions as lib
 import textprints as text
 import asyncio 
 import time
@@ -7,6 +7,7 @@ def handle_input():
     while True:
         try:
             input_dictionary_key = input()
+            print("-------------------------------------------------------------")
             if input_dictionary_key == 'kthxbye':
                 break
             
@@ -15,6 +16,7 @@ def handle_input():
             
             extended_functionality(input_dictionary_key)
             time.sleep(2)
+            print("-------------------------------------------------------------")
             print("\n", "Is there anything else I can help you with? If not, just type in 'kthxbye'")
             
         except KeyError: 
@@ -28,6 +30,8 @@ def extended_functionality(behavior):
         lib.get_expiry_date()
     elif behavior == 'hlppls':
         asyncio.run(lib.try_to_reach_live_support())
+    elif behavior == 'isyourstuffevengood':
+        text.print_rating()
     #elif für ratenzahlung
     #zahlungsmethode für invoice? btc/ debit/ credit
 
