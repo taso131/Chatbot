@@ -31,12 +31,12 @@ def get_total_sum(customer_data) -> float:
         
 def calculations_for_new_customer(amount_to_buy) -> float:
     if amount_to_buy < 2:
-        return product_cost * promotions_dictionary['first_time_50_off']
+        return product_cost * promotions_dictionary['first_order_50_off']
         
     else:
-        first_one_50_off = product_cost * promotions_dictionary['first_time_50_off']
+        first_one_50_off = product_cost * promotions_dictionary['first_order_50_off']
         not_qualified_amount = amount_to_buy - 1    
-        left_ones_25_off = not_qualified_amount * promotions_dictionary['first_order_rest_25_off']
+        left_ones_25_off = (not_qualified_amount * product_cost) * promotions_dictionary['first_order_rest_25_off']
     
         return first_one_50_off + left_ones_25_off
     
