@@ -61,11 +61,11 @@ class BotLogic():
             self.customer_data.append(
                 float(int(dclogic.get_total_sum(self.customer_data))))
             answer = text.print_invoice(self.customer_data)
+            write_order_into_database(self.customer_data)
             self.set_zero()
             return answer
         self.customer_data.append(params)
         self.steps_of_progress["pbuy"] += 1
-        write_order_into_database(self.customer_data)
         return answer
 
     def ask_for_capsules(self):

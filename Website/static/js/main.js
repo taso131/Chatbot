@@ -1,3 +1,6 @@
+const commands = ['pinfo', 'hlppls', 'extendedhlppls', 'icantwait', 'idontwantitanymore', 'wenexpirelul', 'canipaywithbitcoins', 'isyourstuffevengood', 'howdoiusethisshhh', 'wenexpirelul', 'hlppls'];
+
+
 function openChat() {
     loadText();
     document.getElementById('chatbox').style.display = 'block'
@@ -14,6 +17,9 @@ function chatWithBot() {
     xhttp.open("POST", "needAnswer?message=" + message, true);
     xhttp.onload = function (e) {
         appendMessage('other-message', xhttp.responseText);
+        if (commands.includes(message)) {
+            newQuestion();
+        }
     }
     xhttp.send();
     document.forms[0].elements["msg"].value = '';
