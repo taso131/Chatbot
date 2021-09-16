@@ -9,6 +9,7 @@ from flask import request
 app = Flask(__name__)
 bot = BotLogic()
 
+
 @app.route("/")
 def hello_world():
     return render_template('index.html')
@@ -26,10 +27,8 @@ def load_time():
 
 @app.route("/needAnswer", methods=['POST'])
 def need_answer():
-    try:
-        return text.command_dictionary[request.args.get('message')]
-    except KeyError:
-        return bot.extended_functionality(request.args.get('message'))
+    return bot.look_for_command(request.args.get('message'))
+
 
 @app.route("/newQuestion", methods=['GET'])
 def new_question():
