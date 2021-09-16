@@ -49,12 +49,13 @@ class BotLogic():
             self.set_zero()
         self.customer_data.append(params)
         self.steps_of_progress["pbuy"] += 1
+        write_order_into_database(self.customer_data)
         return answer
 
     def ask_for_capsules(self):
         self.set_zero()
         self.steps_of_progress["pbuy"] += 1
-        return """We are happy, to welcome you as a customer. Please, follow the next steps to create your invoice:<br>
+        return """We are happy, to welcome you as a customer. Please, follow the next steps to create your invoice:
                     How many units of Capsules do you want to buy? 1 Unit = 1.000 Capsules"""
 
 # TASO
