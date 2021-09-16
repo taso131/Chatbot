@@ -70,7 +70,7 @@ class BotLogic():
 
     def ask_for_capsules(self):
         self.steps_of_progress["pbuy"] += 1
-        return """We are happy, to welcome you as a customer. Please, follow the next steps to create your invoice:
+        return """We are happy, to welcome you as a customer. Please, follow the next steps to create your invoice:<br>
                     How many units of Capsules do you want to buy? 1 Unit = 1.000 Capsules"""
 
 # TASO
