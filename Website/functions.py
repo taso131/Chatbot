@@ -16,6 +16,16 @@ class BotLogic():
         self.customer_data = []
         self.last_function = ''
 
+    def look_for_command(self, arg):
+        print(self.steps_of_progress['pbuy'])
+        if self.steps_of_progress['pbuy'] == 0:
+            try:
+                return text.command_dictionary[arg]
+            except KeyError:
+                return self.extended_functionality(arg)
+        else:
+            return self.extended_functionality(arg)
+
     def extended_functionality(self, behavior):
         if behavior == 'pbuy':
             self.set_zero()
@@ -34,10 +44,15 @@ class BotLogic():
         for step in self.steps_of_progress:
             self.steps_of_progress[step] = 0
         self.customer_data = []
+        self.last_function = ''
 
     def ask_for_information(self, params):
         answer = ''
         if self.steps_of_progress['pbuy'] == 1:
+            try:
+                int(params)
+            except ValueError:
+                return "Please enter a number!"
             answer = "What's your Firstname?"
         elif self.steps_of_progress['pbuy'] == 2:
             answer = "What's your Lastname?"
@@ -47,12 +62,12 @@ class BotLogic():
                 float(int(dclogic.get_total_sum(self.customer_data))))
             answer = text.print_invoice(self.customer_data)
             self.set_zero()
+            return answer
         self.customer_data.append(params)
         self.steps_of_progress["pbuy"] += 1
         return answer
 
     def ask_for_capsules(self):
-        self.set_zero()
         self.steps_of_progress["pbuy"] += 1
         return """We are happy, to welcome you as a customer. Please, follow the next steps to create your invoice:<br>
                     How many units of Capsules do you want to buy? 1 Unit = 1.000 Capsules"""
